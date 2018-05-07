@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Promotions Checkout";
+}
+
+<h2>Cart</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Item
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Promotion
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td> @item.Product.Name </td>
+                    <td> @item.Quantity </td>
+                    <td> &euro;@item.Product.Price </td>
+                    <td>@item.Product.Promotion</td>
+                </tr>
+                }
+            </tbody>
+
+        </table>
+
+        <a href="/Home/Checkout" class="btn btn-primary">Checkout</a>
+    </div>
+</div>
